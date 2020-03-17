@@ -443,3 +443,123 @@ subjects:
 - kind: ServiceAccount
   name: config-updater
   namespace: ci
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: config-updater
+  namespace: ocp
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - create
+  - update
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: config-updater
+  namespace: ocp
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: config-updater
+subjects:
+- kind: ServiceAccount
+  name: config-updater
+  namespace: ci
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: config-updater
+  namespace: bastion-ppc64le
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - create
+  - update
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: config-updater
+  namespace: bastion-ppc64le
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: config-updater
+subjects:
+- kind: ServiceAccount
+  name: config-updater
+  namespace: ci
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: config-updater
+  namespace: bastion-telco
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - create
+  - update
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: config-updater
+  namespace: bastion-telco
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: config-updater
+subjects:
+- kind: ServiceAccount
+  name: config-updater
+  namespace: ci
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: config-updater
+  namespace: bastion-z
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - create
+  - update
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: config-updater
+  namespace: bastion-z
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: config-updater
+subjects:
+- kind: ServiceAccount
+  name: config-updater
+  namespace: ci

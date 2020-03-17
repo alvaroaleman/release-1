@@ -48,4 +48,20 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
+    name: ocp
+- apiVersion: v1
+  kind: Namespace
+  metadata:
     name: ocp-private
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: bastion-ppc64le
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: bastion-telco
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: bastion-z
