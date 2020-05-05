@@ -6,7 +6,7 @@ metadata:
 data:
   "default.conf": |
     server {
-      listen 8080;
+      listen 8888;
       return 302 $scheme://hook-ci.apps.ci.l2s4.p1.openshiftapps.com$request_uri;
     }
 ---
@@ -62,7 +62,7 @@ spec:
   - name: main
     port: 8888
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8888
   selector:
     component: hook-redirect
   sessionAffinity: None
